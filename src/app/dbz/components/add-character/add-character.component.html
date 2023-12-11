@@ -1,0 +1,32 @@
+<!-- asociando un evento y un atributo al mismo tiempo [()]-->
+<!-- asociando un evento () -->
+<!-- asociando un atributo [] -->
+<!-- el [(ngModel)]="binding" hace las dos cosas, y se refleja al mismo tiempo en el addCharacter -->
+<!--  cuando es un formulario no hacer el (click)="emitCharacter()" en el boton,
+  se hace el submit del formulario mediante ngSubmit (ngSubmit)="emitCharacter()" -->
+
+<h4>Agregar Personaje</h4>
+
+<form class="row" (ngSubmit)="emitCharacter()">
+  <input
+    type="text"
+    [(ngModel)]="character.name"
+    name="name"
+    class="form-control mb-2"
+    placeholder="Nombre"
+  />
+  <input
+    type="number"
+    [(ngModel)]="character.power"
+    name="power"
+    class="form-control mb-2"
+    placeholder="Poder"
+  />
+  <button
+    type="submit"
+    class="btn btn-outline-primary"
+  >
+    Agregar
+  </button>
+  <!--Prueba JSON <pre>{{ character | json }}</pre> -->
+</form>
